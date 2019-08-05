@@ -6,8 +6,6 @@
 
 ## 项目截图
 
-**私人出行**
-![](https://www.ali213.net/picfile/News/2010/07/28/100.jpg)
 ![](https://www.ali213.net/picfile/News/2010/07/28/100.jpg)
 
 ## 技术栈
