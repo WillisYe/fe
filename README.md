@@ -1,43 +1,21 @@
-# 咔咔出行（出行可视化）
+# 魔兽争霸
 
 ## 项目简介
 
-解决出行问题，用于出行行程记录，路线规划，数据可视化分析的移动端webapp
+魔兽争霸相关资料
 
 ## 项目截图
 
 **私人出行**
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/1.jpg)
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/2.jpg)
-**公共交通**
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/3.jpg)
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/4.jpg)
-**历史列表**
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/5.jpg)
-**我的信息**
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/6.jpg)
-![](https://raw.githubusercontent.com/wwenj/MyPicture/master/tripRecord/7.jpg)
+![](https://www.ali213.net/picfile/News/2010/07/28/100.jpg)
+![](https://www.ali213.net/picfile/News/2010/07/28/100.jpg)
 
 ## 技术栈
 
-- **前端**：移动端，vue全家桶，Mand组件库，Echarts.js，Scss
+- **前端**：移动端，vue全家桶，mint-ui组件库，Echarts.js，Scss
 
-- **后端**：Node，Express框架，高德地图API
+- **后端**：Node，Express框架，crawler
 - **数据库**：Mysql
-
-## 功能模块
-
-### 个人出行
-用户个人出行，不确定路程、目的地等信息，选择出行工具，点击开始，系统实时监听用户手机位置得到WGS84经纬度坐标（w3c HTML5 Geolocation地理定位标准），行程结束，记录本次出行信息，经纬度坐标转换GCJ-02坐标体系，通过高德地图提供三方API绘制出行轨迹。
-
-### 公共交通
-用户确定出发地、目的地、交通工具，选择公共交通出行，用户输入位置关键字，选择合适出发/目的位置，选择乘坐交通工具，规划出行路线，选择某一条路线，确定后点击保存上传本次出行记录
-
-### 历史列表
-按时间顺序查看所有出行的历史记录，可查看出行的详情信息、行程轨迹、路线规划
-
-### 我的信息（未完成）
-查看我的详情信息，通过出行数据分析得到的出行趋势折线图，与出行数据相关的数据分析图表，其他功能未写
 
 ## 项目构建
 ### 前端
@@ -62,51 +40,14 @@
 ### 后端
 - 使用`Node`的`express`框架，连接`Mysql`数据库，做数据接口开发，数据的增删改查与简单封装。
 
-## 小结
-
-### 项目简结
-- 难度：简单
-- 开发时长：前期调研，编码一周
-- 关键字：移动端，出行，可视化，高德地图，Echart图表
-
-### 过程总结
-- **想法产出**：因为在滴滴出行的实习经历，准备做款有关出行平台的，有关前端可视化的产品。
-
-- **需求调研**：结合`出行` `可视化` 关键字做需求分析，调研`悦动圈`、`悦跑圈`、`滴滴出行`、`百度地图`、`高德地图`确定几个主要功能
-  1. 实时定位，绘制出行轨迹(悦跑圈，已完成) 
-
-  2. 路线规划，规划路线绘制路径图(百度地图，已完成)
-
-  3. 网约车，快车，专车，顺风车在线叫车(滴滴出行，未完成)
-
-  4. 可视化分析，出行数据的可视化分析(已完成)
-- **技术调研**：
-  1. 选取HTML5 Geolocation提供的物理位置实时监听功能，获取到WGS84经纬坐标
-  
-  2. 选取高德地图第三方API提供地图，地理位置，轨迹绘制，路线规划等功能
-
-  3. 选择开发移动端项目，用滴滴的`Mand`作为移动端UI组件库
-
-  4. 选取`Node`为服务端，`Express`为后端框架，`Mysql`为数据库
-  
-### 难点总结
-
- 产品从无到有是最困难的，项目虽然不难，可前期产品调研，技术调研，项目构建确花费了大量时间，相比照着成品写多了很多不一样的体验
-
-### 补充
-
- 服务器还在调整，环境搭建好后会上传到线上   
- 
- 注：因为马上毕业，这只是为了应对毕业设计临时写的小项目，没想到会有这么多star，时间有限主要实现核心功能，产品还是很粗糙，我会找时间完善下，谢谢
-
 ## 项目运行
 
 ``` bash
 # 克隆项目
-git clone git@github.com:wwenj/tripRecord.git
+git clone https://github.com/WillisYe/fe.git
 
 # 分别进入view/，server/文件夹分别下载依赖
-cd view/server
+cd view/server/node
 
 npm install
 
@@ -123,6 +64,6 @@ npm run build
 
 ```
 
-作者 [[王文健\]](http://www.wwenj.com/)    
+作者 [[叶伟\]](https://github.com/WillisYe/)    
 
-2019 年 6月 6日 
+2019 年 8月 6日 
