@@ -1,0 +1,12 @@
+// scss公用变量配置
+$primary: #0b9ef4;
+$warning: #e6a23c;
+$bordercolor: #edf0f7;
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}

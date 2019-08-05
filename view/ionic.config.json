@@ -1,0 +1,8 @@
+{
+  "name": "war3",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "custom"
+}

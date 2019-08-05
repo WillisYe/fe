@@ -1,0 +1,6 @@
+{
+  "appId": "io.ionic.war3",
+  "appName": "war3",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

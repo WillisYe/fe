@@ -1,0 +1,14 @@
+/*
+element scss变量重置，组件样式定制
+Write your variables here. All available variables can be
+found in element-ui/packages/theme-chalk/src/common/var.scss.
+For example, to overwrite the theme color:
+*/
+
+// 可定义变量位置 "~element-ui/packages/theme-chalk/src/common/var.scss"
+$--color-primary: $primary;
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
