@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header fixed title="英雄详解">
+    <mt-header fixed title="统计分析">
       <mt-button @click.native="togglePopup" icon="more" slot="left"></mt-button>
     </mt-header>
     <mt-popup v-model="popupVisible" position="left">
@@ -40,12 +40,19 @@
       Papa.parse("../static/data/hero.csv", {
         download: true,
         complete: function(res) {
-          let data = res.data;          
+          let data = res.data;
           self.list = data.filter(
             item => item.length === 2 && item[1].length > 150
           );
           self.getContent(self.list[0]);
+          console.log(data);
         }
+      });
+      this.$http.get("/api/unit", {}).then(res => {
+        console.log(res);
+      });
+      this.$http.get("/api/hero", {}).then(res => {
+        console.log(res);
       });
     }
   };

@@ -9,6 +9,7 @@
         <mt-cell @click.native="changeNation('ne')" :class="current.nation==='ne'?'active':''" is-link>暗夜</mt-cell>
         <mt-cell @click.native="changeNation('orc')" :class="current.nation==='orc'?'active':''" is-link>兽族</mt-cell>
         <mt-cell @click.native="changeNation('ud')" :class="current.nation==='ud'?'active':''" is-link>不死</mt-cell>
+        <mt-cell @click.native="changeNation('zl')" :class="current.nation==='zl'?'active':''" is-link>中立</mt-cell>
       </div>
     </mt-popup>
     <div class="content-wrap">
@@ -31,6 +32,7 @@
         ne: [],
         orc: [],
         ud: [],
+        zl: [],
         current: {
           nation: "",
           list: [],
@@ -68,12 +70,13 @@
         let name = temp[2] || temp[0];
         name = name.replace(/<([\S\s]*?)>/g, "");
         name = name.replace(/\s*/g, "");
-        name = name.replace(/\(.*\)/, "");
-        return name;
+        name = name.replace(/[\(（].*[\)）]/, "");
+        return name == "状态" ? "破法" : name;
       },
       changeNation(nation) {
         document.querySelector(".content-wrap").scrollTo(0, 0);
         this.current.list = this[nation];
+        console.log(this.current.list);
         this.current.nation = nation;
         this.changeUnit(0);
         this.popupVisible = false;
@@ -90,11 +93,25 @@
         complete: function(res) {
           let data = res.data.slice(0, -6);
           let list = self.getList(data);
+          console.log(list);
           self.hum = list.filter(item => ["人类", "人族"].includes(item.nation));
           self.ne = list.filter(item => item.nation === "暗夜");
           self.orc = list.filter(item => item.nation === "兽族");
           self.ud = list.filter(item => item.nation === "不死");
           self.changeNation("hum");
+        }
+      });
+      Papa.parse("../static/data/hero.csv", {
+        download: true,
+        complete: function(res) {
+          let data = res.data;
+          data = data.filter(item => item[0].includes("中立"));
+          self.zl = data.map(item => ({
+            name: item[0].slice(6),
+            html: "<br>" + item[1],
+            type: "hero",
+            nation: "zl"
+          }));
         }
       });
     }

@@ -12,7 +12,7 @@
       </mt-tab-item>
       <mt-tab-item id="hero">
         <img slot="icon" src="../../static/t3.png" />
-        英雄详解
+        统计分析
       </mt-tab-item>
       <mt-tab-item id="prop">
         <img slot="icon" src="../../static/t4.png" />
@@ -44,17 +44,11 @@
     mounted() {},
     created() {
       this.handleChange();
-      this.$http.get("/unit", {}).then(res => {
-        console.log(res);
+      this.$http.get("/api/creep", {}).then(res => {
+        // console.log(res);
       });
-      this.$http.get("/creep", {}).then(res => {
-        console.log(res);
-      });
-      this.$http.get("/hero", {}).then(res => {
-        console.log(res);
-      });
-      this.$http.get("/prop", {}).then(res => {
-        console.log(res);
+      this.$http.get("/api/prop", {}).then(res => {
+        // console.log(res);
       });
     },
     updated() {}

@@ -55,10 +55,7 @@ axios.interceptors.request.use(
         let restUrls = ['/api/rest/annualpan/publish']
         if ((!config.url.includes('/api/obj/') || objUrls.includes(config.url)) && !restUrls.includes(config.url)) {
             config.data = qs.stringify(config.data)
-        }
-        if (config.url.startsWith('/api')) {
-            config.url = config.url.slice(4)
-        }
+        }        
 
         config.withCredentials = true;
         return config;
@@ -73,13 +70,12 @@ axios.interceptors.request.use(
 // response 拦截器
 axios.interceptors.response.use(
     response => {
-        console.log("axios res")
         if (['/auth/oauth/token'].includes(response.config.url) || response.config.url.endsWith('/export')) {
             // 登录接口返回数据结构特殊，导出接口返回数据为文本流
             return response;
         } else if (typeof response.data === 'object') {
             switch (response.data.code) {
-                case 0:
+                case 200:
                     window.responseRet = response.data.code;
                     return response;
                 case 10:
@@ -98,7 +94,6 @@ axios.interceptors.response.use(
         }
     },
     err => {
-        console.log("axios err")
         err.request = null;
         delete err.request;
         err.response = null;

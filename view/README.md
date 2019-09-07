@@ -64,4 +64,5 @@ png图片放在 "resources\android"目录下
 ionic cordova resources android
 
 ## 打包生成APP ##
+ionic cordova platform add android
 ionic cordova build android

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header fixed title="新手必读">
+    <mt-header fixed title="野外生物">
       <mt-button @click.native="togglePopup" icon="more" slot="left"></mt-button>
     </mt-header>
     <mt-popup v-model="popupVisible" position="left">
